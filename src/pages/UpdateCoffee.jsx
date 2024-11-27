@@ -6,7 +6,7 @@ import { IoMdArrowBack } from "react-icons/io";
 const UpdateCoffee = () => {
 
     const coffee = useLoaderData()
-    const { name, chef, supplier, test, category, details, photoUrl, } = coffee || {}
+    const { name, chef, supplier, test, category, details, photoUrl, _id} = coffee || {}
 
     const handleUpdateCoffee = (event) =>{
         event.preventDefault()
@@ -21,9 +21,11 @@ const UpdateCoffee = () => {
         const photoUrl = form.photoUrl.value;
         const coffeeDetails = {name , chef , supplier , test , category , details , photoUrl , }
 
+        console.log(coffeeDetails)
+
         // transfer data for mongoDB server
-        fetch('http://localhost:5000/coffee' , {
-            method: 'POST',
+        fetch(`http://localhost:5000/coffee/${_id}` , {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
