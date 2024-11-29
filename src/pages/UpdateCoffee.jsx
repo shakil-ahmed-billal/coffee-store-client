@@ -3,6 +3,7 @@ import image from '../assets/icons/1.png'
 import { Link, useLoaderData } from 'react-router-dom'
 import { IoMdArrowBack } from "react-icons/io";
 
+
 const UpdateCoffee = () => {
 
     const coffee = useLoaderData()
@@ -36,12 +37,14 @@ const UpdateCoffee = () => {
         })
     }
 
+    
+    
     return (
         <div className='w-10/12 mx-auto my-20 '>
             <div className="">
-                <Link to={'/'} className='flex text-2xl items-center mb-5'><IoMdArrowBack /><span className='font-default text-3xl'>Back to Home</span></Link>
+                <Link to={'/'} className='flex items-center mb-5 text-2xl'><IoMdArrowBack /><span className='text-3xl font-default'>Back to Home</span></Link>
                 <div className="bg-[#F5F4F1] p-5 rounded-xl">
-                    <div className="content-center flex-col">
+                    <div className="flex-col content-center">
                         <h1>Update Existing Coffee Details</h1>
                         <p className='w-10/12 mx-auto text-center'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                     </div>
@@ -84,7 +87,7 @@ const UpdateCoffee = () => {
                                     </label>
                                     <input defaultValue={details} type="text" name='details' placeholder="Mr. Matin Paul" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control col-span-2">
+                                <div className="col-span-2 form-control">
                                     <label className="label">
                                         <span className="label-text">PhotoURL</span>
                                     </label>
@@ -101,3 +104,6 @@ const UpdateCoffee = () => {
 }
 
 export default UpdateCoffee
+
+
+
